@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAuthenticator, UseAuthenticator} from "@aws-amplify/ui-react";
+import { useAuthenticator } from '@aws-amplify/ui-react';
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 
@@ -27,7 +27,6 @@ function App() {
     <main>
       <h1>My todos</h1>
       <button onClick={createTodo}>+ new</button>
-      <button onClick={signOut}>Sign out</button>
       <ul>
         {todos.map((todo) => (
           <li onClick={() => deleteTodo(todo.id)}
@@ -41,6 +40,7 @@ function App() {
           Review next step of this tutorial.
         </a>
       </div>
+      <button onClick={signOut}>Sign out</button>
     </main>
   );
 }
